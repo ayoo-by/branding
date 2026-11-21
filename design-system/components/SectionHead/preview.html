@@ -1,0 +1,55 @@
+<!-- @dsCard group="Content" height=680 subtitle="Sage heading that opens the blog list and the tag pages" -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Section head preview</title>
+<style>
+  body { min-height: 0; }
+  /* Each frame holds one real .section; its caption sits in the section's bottom padding. */
+  .demo-frame { position: relative; }
+  .demo-frame + .demo-frame { border-top: 1px solid var(--border-soft); }
+  .demo-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .demo-row > .demo-frame + .demo-frame { border-top: 0; border-left: 1px solid var(--border-soft); }
+  .demo-cap { position: absolute; left: 0; right: 0; bottom: 1.1rem; }
+  .note { font-size: .82rem; color: var(--ink-soft); }
+  .note code { font-family: var(--font-mono); font-size: .92em; color: var(--ink); }
+  .demo-foot { border-top: 1px solid var(--border-soft); padding-block: 1rem 1.25rem; }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="demo-frame">
+  <section class="section wrap">
+    <div class="head">
+      <h2>Blog</h2>
+      <div class="lead">Notes on building software, design decisions, and whatever I&#39;m learning this week.</div>
+    </div>
+    <p class="lead">No posts yet, check back soon.</p>
+  </section>
+  <div class="demo-cap wrap"><p class="note">Blog list: head, then the empty state the live blog shows today</p></div>
+</div>
+<div class="demo-frame demo-row">
+  <div class="demo-frame">
+    <section class="section wrap">
+      <div class="head">
+        <span class="eyebrow"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12.59 2.59A2 2 0 0 0 11.17 2H4a2 2 0 0 0-2 2v7.17a2 2 0 0 0 .59 1.41l8.7 8.7a2.43 2.43 0 0 0 3.42 0l6.58-6.58a2.43 2.43 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg> Tags</span>
+        <h2>Browse by tag</h2>
+      </div>
+    </section>
+    <div class="demo-cap wrap"><p class="note">Tag index</p></div>
+  </div>
+  <div class="demo-frame">
+    <section class="section wrap">
+      <div class="head">
+        <span class="eyebrow"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12.59 2.59A2 2 0 0 0 11.17 2H4a2 2 0 0 0-2 2v7.17a2 2 0 0 0 .59 1.41l8.7 8.7a2.43 2.43 0 0 0 3.42 0l6.58-6.58a2.43 2.43 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg> Tag</span>
+        <h2>#Nginx</h2>
+        <p>3 posts tagged "Nginx".</p>
+      </div>
+    </section>
+    <div class="demo-cap wrap"><p class="note">One tag's page, with its count line</p></div>
+  </div>
+</div>
+<div class="demo-foot wrap"><p class="note">The tag icon is in the markup but renders at 0 by 0 in Chromium, as on the live site: the theme sets no size for <code>.eyebrow .ico</code>, so only the eyebrow's <code>0.5rem</code> gap shows before the label.</p></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!-- @dsCard group="Actions" height=291 subtitle="Ghost pill links that page through the blog list" -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Button preview</title>
+<style>
+  body { min-height: 0; }
+  .demo { padding: 0 1.5rem 1.5rem; }
+  /* Hover stand-in: the exact values of .btn:hover and .btn--ghost:hover (dark: the [data-theme="dark"] override). */
+  .demo .btn.is-hover { transform: translateY(-2px); background: #fff; }
+  [data-theme="dark"] .demo .btn.is-hover { background: rgba(255, 255, 255, 0.14); }
+  .note { max-width: 44rem; margin: .8rem auto 0; font-size: .82rem; color: var(--ink-soft); }
+  .note code { font-family: var(--font-mono); font-size: .92em; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="demo">
+  <nav class="pager" style="justify-content:center;gap:0.6rem;margin-top:2.5rem" aria-label="Pagination">
+    <a class="btn btn--ghost" href="#page-1"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> Newer</a>
+    <span class="pill">Page 2 / 3</span>
+    <a class="btn btn--ghost is-hover" href="#page-3">Older <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+  </nav>
+  <p class="note">Page 2 of the blog list. Both links also match <code>.pager a { flex: 1 }</code>, so they stretch to share the row. Older shows the hover stand-in: lifted 2px, fill <code>#fff</code> in light and <code>rgba(255, 255, 255, 0.14)</code> in dark.</p>
+  <nav class="pager" style="justify-content:center;gap:0.6rem;margin-top:2.5rem" aria-label="Pagination">
+    <span class="pill">Page 1 / 3</span>
+    <a class="btn btn--ghost" href="#page-2">Older <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+  </nav>
+  <p class="note">Page 1: no Newer link, so Older takes all the width the pill leaves.</p>
+</div>
+</body>
+</html>

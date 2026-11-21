@@ -1,0 +1,92 @@
+<!-- @dsCard group="Hero" width=960 height=760 subtitle="Split home hero, two glass stages over the mesh gradient" -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Hero preview</title>
+<style>
+  body { min-height: 0; }
+  /* Preview frame: a fixed 720px stand-in for the 100dvh home. The three rules below
+     repeat what body.is-home main, body.is-home .hero and body.is-home .hero__stage set. */
+  .demo-home { height: 720px; display: flex; flex-direction: column; }
+  .demo-home .hero { flex: 1; min-height: 0; min-width: 0; display: flex; flex-direction: column; --pad-y: clamp(1rem, 3vh, 2.25rem); --pad-x: clamp(1.25rem, 4vw, 3rem); padding: var(--pad-y) var(--pad-x); }
+  .demo-home .hero__stage { flex: 1; min-height: 0; min-width: 0; }
+  .note { padding: .5rem 3rem .6rem; font-size: .82rem; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="demo-home">
+<section class="hero hero--split">
+  <canvas id="hero-gradient" class="hero__gradient" data-hero-gradient aria-hidden="true"></canvas>
+
+  <div class="hero__stage">
+    <div class="hero__topbar">
+      <div class="theme-switch" role="group" aria-label="Colour theme">
+        <button class="theme-switch__btn" type="button" data-theme-set="light" aria-label="Light theme" aria-pressed="false" title="Light"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
+        <button class="theme-switch__btn is-active" type="button" data-theme-set="auto" aria-label="Match system theme" aria-pressed="true" title="System"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></button>
+        <button class="theme-switch__btn" type="button" data-theme-set="dark" aria-label="Dark theme" aria-pressed="false" title="Dark"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 009 9 9 9 0 11-9-9z"/></svg></button>
+      </div>
+    </div>
+    <div class="hero__head">
+      <h1><a class="hero__name" href="#about" title="About me" aria-label="About Diab Neiroukh"><span class="hero__fn">Diab</span> <span class="hero__ln">Neiroukh</span></a></h1>
+      <div class="hero__socials">
+        <div class="socials">
+          <a class="social" href="#email" aria-label="Email"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94.0 01-2.06.0L2 7"/></svg></a>
+          <a class="social" href="#github" aria-label="GitHub"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 22v-4a4.8 4.8.0 00-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35.0-3.5.0.0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 1 5 1 5 1c-.3 1.15-.3 2.35.0 3.5A5.4 5.4.0 004 8c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 16.38 9 17v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+          <a class="social" href="#instagram" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          <a class="social" href="#linkedin" aria-label="LinkedIn"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a class="social" href="#telegram" aria-label="Telegram"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.7 4.3 2.5 11.6c-.9.4-.9 1.6.0 1.9L7.2 15 9 20.6c.2.7 1.1.9 1.6.3l2.6-2.6 4.7 3.5c.6.4 1.5.1 1.7-.6l3.3-15.6c.2-.9-.7-1.6-1.5-1.3z"/><path d="m7.2 14.9 11-7.2-8.5 8.6"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <a class="hero-corner" href="#blog" aria-label="Field notes">
+      <span class="hero-corner__mask hero-corner__mask--top" aria-hidden="true"><svg viewBox="0 0 56 56" preserveAspectRatio="none" fill="none"><path d="M56 56V0C56 30.9279 30.9279 56 0 56H56z" style="fill:var(--bg)"/></svg></span>
+      <span class="hero-corner__mask hero-corner__mask--left" aria-hidden="true"><svg viewBox="0 0 56 56" preserveAspectRatio="none" fill="none"><path d="M56 56H0C30.9279 56 56 30.9279 56 0V56z" style="fill:var(--bg)"/></svg></span>
+      <span class="hero-corner__circle"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+      <span class="hero-corner__info">
+        <span class="hero-corner__title">Field notes</span>
+        <span class="hero-corner__sub">Latest posts <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></span>
+      </span>
+    </a>
+  </div>
+
+  <div class="hero__seam" aria-hidden="true">
+    <span class="hero__seam-fill hero__seam-fill--top-bl"></span>
+    <span class="hero__seam-fill hero__seam-fill--top-br"></span>
+    <span class="hero__seam-fill hero__seam-fill--bot-tl"></span>
+    <span class="hero__seam-fill hero__seam-fill--bot-tr"></span>
+  </div>
+
+  <div class="hero__stage">
+    <div class="hero__topbar">
+      <div class="theme-switch labs-pill" role="group" aria-label="Ayoo by Labs">
+        <a class="theme-switch__btn is-active" href="#labs" aria-label="Ayoo by Labs on GitHub"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 22v-4a4.8 4.8.0 00-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35.0-3.5.0.0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 1 5 1 5 1c-.3 1.15-.3 2.35.0 3.5A5.4 5.4.0 004 8c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 16.38 9 17v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+        <a class="theme-switch__btn is-active" href="#labs" aria-label="Ayoo by Labs"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 2v6a2 2 0 00.245.96l5.51 10.08A2 2 0 0118 22H6a2 2 0 01-1.755-2.96l5.51-10.08A2 2 0 0010 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></svg></a>
+      </div>
+    </div>
+    <div class="hero__head">
+      <h1><a class="hero__name" href="#" data-coming-soon aria-label="Ayooby"><span class="hero__fn">Ayoo</span><span class="hero__ln">by</span></a></h1>
+      <div class="hero__socials">
+        <div class="socials">
+          <a class="social" href="#email" aria-label="Email"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94.0 01-2.06.0L2 7"/></svg></a>
+          <a class="social" href="#github" aria-label="GitHub"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 22v-4a4.8 4.8.0 00-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35.0-3.5.0.0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 1 5 1 5 1c-.3 1.15-.3 2.35.0 3.5A5.4 5.4.0 004 8c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 16.38 9 17v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <a class="hero-corner" href="#" data-coming-soon aria-label="Products and services">
+      <span class="hero-corner__mask hero-corner__mask--top" aria-hidden="true"><svg viewBox="0 0 56 56" preserveAspectRatio="none" fill="none"><path d="M56 56V0C56 30.9279 30.9279 56 0 56H56z" style="fill:var(--bg)"/></svg></span>
+      <span class="hero-corner__mask hero-corner__mask--left" aria-hidden="true"><svg viewBox="0 0 56 56" preserveAspectRatio="none" fill="none"><path d="M56 56H0C30.9279 56 56 30.9279 56 0V56z" style="fill:var(--bg)"/></svg></span>
+      <span class="hero-corner__circle"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+      <span class="hero-corner__info">
+        <span class="hero-corner__title">Products and services</span>
+        <span class="hero-corner__sub">What we build <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></span>
+      </span>
+    </a>
+  </div>
+
+  <div class="toast" data-toast role="status" aria-live="polite">Coming soon</div>
+</section>
+</div>
+<p class="note">Static gradient fallback (no WebGL or reduced motion). Theme switch on System, the default. Hover a stage to grow it to flex-grow 1.5.</p>
+</body>
+</html>

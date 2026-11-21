@@ -1,0 +1,30 @@
+<!-- @dsCard group="Content" height=303 subtitle="Raised glass page counter on the blog list" -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Pill preview</title>
+<style>
+  body { min-height: 0; }
+  .demo { padding: 0 1.5rem 1.5rem; }
+  .demo-row { max-width: 44rem; margin: 2.5rem auto 0; }
+  .note { max-width: 44rem; margin: .8rem auto 0; font-size: .82rem; color: var(--ink-soft); }
+  .note code { font-family: var(--font-mono); font-size: .92em; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="demo">
+  <nav class="pager" style="justify-content:center;gap:0.6rem;margin-top:2.5rem" aria-label="Pagination">
+    <a class="btn btn--ghost" href="#page-1"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> Newer</a>
+    <span class="pill">Page 2 / 3</span>
+    <a class="btn btn--ghost" href="#page-3">Older <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+  </nav>
+  <p class="note">In the blog list's pagination nav: the same <code>surface-2</code> glass and rim as the ghost buttons, in <code>ink-soft</code>, and static. It keeps its own width and stretches to the buttons' height.</p>
+  <div class="demo-row">
+    <span class="pill">Page 2 / 3</span>
+  </div>
+  <p class="note">Standalone: <code>0.5rem 1rem</code> padding, <code>radius-pill</code>, a 1px <code>border-glass</code> rim and an inset top highlight, Inter 450 at 0.85rem.</p>
+</div>
+</body>
+</html>

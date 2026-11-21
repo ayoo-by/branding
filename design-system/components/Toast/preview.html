@@ -1,0 +1,42 @@
+<!-- @dsCard group="Feedback" height=280 subtitle="Glass pill at bottom centre, shown for 2600ms" -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Toast preview</title>
+<style>
+  body { min-height: 0; }
+  .demo { padding: 1.5rem; }
+  .demo-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+  .demo-item { margin: 0; }
+  /* Each frame stands in for the viewport. The .toast inside is switched to
+     position: absolute so it sits at the bottom centre of the frame, not the page. */
+  .demo-frame { position: relative; height: 170px; border-radius: var(--radius-lg); border: 1px solid var(--border-soft); display: grid; justify-items: center; align-content: start; padding-top: 2rem; }
+  .demo-frame .toast { position: absolute; }
+  .note { margin-top: .6rem; font-size: .82rem; color: var(--ink-soft); }
+  .note code { font-family: var(--font-mono); font-size: .92em; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="demo">
+  <div class="demo-row">
+    <figure class="demo-item">
+      <div class="demo-frame">
+        <h1><a class="hero__name" href="#" data-coming-soon aria-label="Ayooby"><span class="hero__fn">Ayoo</span><span class="hero__ln">by</span></a></h1>
+        <div class="toast" data-toast role="status" aria-live="polite">Coming soon</div>
+      </div>
+      <figcaption class="note">At rest: hidden, <code>opacity: 0</code>, 1rem below its slot</figcaption>
+    </figure>
+    <figure class="demo-item">
+      <div class="demo-frame">
+        <h1><a class="hero__name" href="#" data-coming-soon aria-label="Ayooby"><span class="hero__fn">Ayoo</span><span class="hero__ln">by</span></a></h1>
+        <div class="toast is-visible" data-toast role="status" aria-live="polite">Coming soon</div>
+      </div>
+      <figcaption class="note">After a <code>data-coming-soon</code> click: <code>.is-visible</code>, 2600ms</figcaption>
+    </figure>
+  </div>
+  <p class="note">Preview only: the toast is <code>position: absolute</code> inside each frame. On a page it is <code>position: fixed</code> to the viewport.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!-- @dsCard group="Content" height=445 subtitle="Flat sage pill: card topics, post tags and the tag index" -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Tag preview</title>
+<style>
+  body { min-height: 0; }
+  .demo { padding: 1.5rem; }
+  .demo-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem; align-items: start; }
+  .demo-stack { display: grid; gap: .75rem; }
+  .demo-item { margin: 0; }
+  .note { margin-top: .7rem; font-size: .82rem; color: var(--ink-soft); }
+  .note code { font-family: var(--font-mono); font-size: .92em; color: var(--ink); }
+  .demo-foot { margin-top: 1.4rem; }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="demo">
+  <div class="demo-row">
+    <figure class="demo-item">
+      <div class="grid grid--3">
+        <a class="card" href="#running-http3-on-a-hardened-nginx" style="--d:0s">
+          <div class="card__meta">
+            <span class="mi"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg> 12 Nov 2026</span>
+            <span class="mi"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 min</span>
+          </div>
+          <h3>Running HTTP/3 on a hardened NGINX</h3>
+          <p>What it took to turn on QUIC in zestginx, and the defaults I changed along the way.</p>
+          <div class="tags"><span class="tag">nginx</span><span class="tag">security</span><span class="tag">networking</span></div>
+          <span class="card__foot">Read post <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+        </a>
+      </div>
+      <figcaption class="note">In a card: <code>span.tag</code>, the first three tags as written in front matter</figcaption>
+    </figure>
+    <div class="demo-stack">
+      <figure class="demo-item">
+        <div class="tags" style="justify-content:center;margin-top:1.1rem">
+          <a class="tag" href="#tags-nginx">Nginx</a><a class="tag" href="#tags-security">Security</a><a class="tag" href="#tags-networking">Networking</a><a class="tag" href="#tags-performance">Performance</a>
+        </div>
+        <figcaption class="note">Post header: <code>a.tag</code> links to every tag on the post, centred, with Hugo's title-cased term names</figcaption>
+      </figure>
+      <figure class="demo-item">
+        <div class="tags" style="gap:0.6rem">
+          <a class="tag" href="#tags-networking" style="font-size:0.9rem;padding:0.4rem 0.95rem">#Networking <span style="opacity:.6">1</span></a>
+          <a class="tag" href="#tags-nginx" style="font-size:0.9rem;padding:0.4rem 0.95rem">#Nginx <span style="opacity:.6">3</span></a>
+          <a class="tag" href="#tags-performance" style="font-size:0.9rem;padding:0.4rem 0.95rem">#Performance <span style="opacity:.6">1</span></a>
+          <a class="tag" href="#tags-security" style="font-size:0.9rem;padding:0.4rem 0.95rem">#Security <span style="opacity:.6">2</span></a>
+          <a class="tag" href="#tags-developer-tools" style="font-size:0.9rem;padding:0.4rem 0.95rem">#Developer Tools <span style="opacity:.6">1</span></a>
+          <a class="tag" href="#tags-mcp" style="font-size:0.9rem;padding:0.4rem 0.95rem">#MCP <span style="opacity:.6">1</span></a>
+          <a class="tag" href="#tags-cloudflare" style="font-size:0.9rem;padding:0.4rem 0.95rem">#Cloudflare <span style="opacity:.6">1</span></a>
+        </div>
+        <figcaption class="note">Tag index: <code>0.9rem</code> links with a post count at 60% opacity</figcaption>
+      </figure>
+    </div>
+  </div>
+  <p class="note demo-foot">The active nav item (<code>.nav__menu a.is-active</code>) shares the tag's <code>pill-bg</code> fill and <code>sage-700</code> text, so the two read as one pill family.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!-- @dsCard group="Navigation" height=301 subtitle="Sage arrow link back to the post list or home" -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Backlink preview</title>
+<style>
+  body { min-height: 0; }
+  .demo { padding: 1.5rem; }
+  .demo-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .demo-row + .demo-row { margin-top: 1rem; grid-template-columns: minmax(0, 1fr); }
+  .demo-cell { margin: 0; padding: 1.4rem 1.5rem 1.2rem; border: 1px solid var(--border-soft); border-radius: var(--radius-lg); }
+  .demo-cell--centre { padding-top: 0; text-align: center; }
+  .note { margin-top: .85rem; font-size: .82rem; color: var(--ink-soft); }
+  .note code { font-family: var(--font-mono); font-size: .92em; color: var(--ink); }
+  /* Hover stand-in: the exact value of .backlink:hover .ico. */
+  .demo .backlink.is-hover .ico { transform: translateX(-3px); }
+  /* Focus stand-in: the global :focus-visible ring. */
+  .demo .backlink.is-focus { outline: 2px solid var(--sage-500); outline-offset: 3px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="demo">
+  <div class="demo-row">
+    <figure class="demo-cell">
+      <a class="backlink" href="#blog"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> All posts</a>
+      <figcaption class="note">At rest: <code>sage-700</code>, Inter 500 at <code>0.92rem</code></figcaption>
+    </figure>
+    <figure class="demo-cell">
+      <a class="backlink is-hover" href="#blog"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> All posts</a>
+      <figcaption class="note">Hover stand-in: arrow at <code>translateX(-3px)</code></figcaption>
+    </figure>
+    <figure class="demo-cell">
+      <a class="backlink is-focus" href="#blog"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> All posts</a>
+      <figcaption class="note">Focus stand-in: the global <code>sage-500</code> ring</figcaption>
+    </figure>
+  </div>
+  <div class="demo-row">
+    <figure class="demo-cell demo-cell--centre">
+      <p style="--d:.2s; margin-top: 1.75rem;">
+        <a class="backlink" href="#home"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> Back home</a>
+      </p>
+      <figcaption class="note">On the 404 page: inside a <code>p</code> with <code>margin-top: 1.75rem</code>, centred by the section</figcaption>
+    </figure>
+  </div>
+</div>
+</body>
+</html>

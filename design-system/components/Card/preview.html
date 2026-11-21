@@ -1,0 +1,48 @@
+<!-- @dsCard group="Content" height=416 subtitle="Glass post card, brightens and turns sage on hover" -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Card preview</title>
+<style>
+  body { min-height: 0; }
+  .demo { padding: 1.75rem 1.5rem 1.5rem; }
+  /* Hover stand-in: what a templated card computes on :hover. .card:hover also sets translateY(-6px),
+     but on the site [data-reveal].is-visible (same specificity, later) resets transform to none, so no lift. */
+  .demo .card.is-hover { box-shadow: var(--shadow-lift); background: var(--surface-2); }
+  .demo .card.is-hover:after { opacity: 1; }
+  .demo .card.is-hover h3 { color: var(--sage-700); }
+  .demo .card.is-hover .card__foot .ico { transform: translate(3px, -3px); }
+  .note { margin-top: 1.1rem; font-size: .82rem; color: var(--ink-soft); }
+  .note code { font-family: var(--font-mono); font-size: .92em; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="demo">
+  <div class="grid grid--3">
+    <a class="card" href="#running-http3-on-a-hardened-nginx" style="--d:0s">
+      <div class="card__meta">
+        <span class="mi"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg> 12 Nov 2026</span>
+        <span class="mi"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 min</span>
+      </div>
+      <h3>Running HTTP/3 on a hardened NGINX</h3>
+      <p>What it took to turn on QUIC in zestginx, and the defaults I changed along the way.</p>
+      <div class="tags"><span class="tag">nginx</span><span class="tag">security</span><span class="tag">networking</span></div>
+      <span class="card__foot">Read post <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+    </a>
+    <a class="card is-hover" href="#small-mcp-servers-for-claude-code" style="--d:0.06s">
+      <div class="card__meta">
+        <span class="mi"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg> 3 Nov 2026</span>
+        <span class="mi"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4 min</span>
+      </div>
+      <h3>Small MCP servers for Claude Code</h3>
+      <p>Why I keep each server to one job, and how I test them before they reach my editor.</p>
+      <div class="tags"><span class="tag">MCP</span><span class="tag">developer tools</span></div>
+      <span class="card__foot">Read post <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+    </a>
+  </div>
+  <p class="note">Left at rest. Right in hover as the site shows it (stand-in for <code>:hover</code>): <code>surface-2</code> fill, <code>shadow-lift</code>, sheen, <code>sage-700</code> title, arrow nudged 3px. No lift: the reveal rule cancels the 6px in <code>.card:hover</code>.</p>
+</div>
+</body>
+</html>

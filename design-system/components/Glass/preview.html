@@ -1,0 +1,56 @@
+<!-- @dsCard group="Foundations" height=296 subtitle="Frosted fill, backdrop blur, light rim, tinted shadow" -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Glass preview</title>
+<style>
+  body { min-height: 0; }
+  .demo { padding: 1.75rem 1.5rem 1.5rem; }
+  .demo-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; }
+  .demo-item { margin: 0; }
+  .demo-stage { position: relative; }
+  /* Preview-only backdrop: two solid sage discs half under each panel, so the blur is visible. */
+  .demo-disc { position: absolute; border-radius: 50%; }
+  .demo-disc--a { top: -1.1rem; left: -1.1rem; width: 5.5rem; height: 5.5rem; background: var(--sage-400); }
+  .demo-disc--b { right: -1.25rem; bottom: -.6rem; width: 4rem; height: 4rem; background: var(--sage-600); }
+  .demo-pad { position: relative; padding: 1.35rem 1.5rem; }
+  .demo-pad h3 { font-size: 1.45rem; }
+  .demo-pad p { margin-top: .5rem; color: var(--ink-soft); font-size: .96rem; }
+  /* Preview-only hover stand-in: the values .pager a:hover .glass applies. */
+  .demo .is-hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+  .note { margin-top: .85rem; font-size: .82rem; color: var(--ink-soft); }
+  .note code { font-family: var(--font-mono); font-size: .92em; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="demo">
+  <div class="demo-row">
+    <figure class="demo-item">
+      <div class="demo-stage">
+        <span class="demo-disc demo-disc--a" aria-hidden="true"></span>
+        <span class="demo-disc demo-disc--b" aria-hidden="true"></span>
+        <div class="glass demo-pad">
+          <h3>Field notes</h3>
+          <p>Notes on building software, design decisions, and whatever I'm learning this week.</p>
+        </div>
+      </div>
+      <figcaption class="note">At rest: <code>surface</code> fill, <code>shadow-glass</code></figcaption>
+    </figure>
+    <figure class="demo-item">
+      <div class="demo-stage">
+        <span class="demo-disc demo-disc--a" aria-hidden="true"></span>
+        <span class="demo-disc demo-disc--b" aria-hidden="true"></span>
+        <div class="glass demo-pad is-hover">
+          <h3>Field notes</h3>
+          <p>Notes on building software, design decisions, and whatever I'm learning this week.</p>
+        </div>
+      </div>
+      <figcaption class="note">Hover inside <code>.pager</code>: lifted 3px onto <code>shadow-lift</code></figcaption>
+    </figure>
+  </div>
+  <p class="note">Anatomy: <code>surface</code> fill, <code>blur(20px) saturate(150%)</code> backdrop, 1px <code>border-glass</code> rim, <code>shadow-glass</code> (inset top highlight and two tinted drops), <code>radius</code> 1.25rem. The sage discs sit behind the panels to show the blur.</p>
+</div>
+</body>
+</html>

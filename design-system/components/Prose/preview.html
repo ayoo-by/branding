@@ -1,0 +1,43 @@
+<!-- @dsCard group="Content" height=848 subtitle="Long-form column for posts and the About page" -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Prose preview</title>
+<style>
+  body { min-height: 0; }
+  .demo { padding: 2rem 1.5rem 1.75rem; }
+  /* Hover stand-in: the exact value of .prose a:hover. */
+  .demo .prose a.is-hover { text-decoration-color: var(--sage-600); }
+  .note { max-width: 44rem; margin: 2rem auto 0; font-size: .82rem; color: var(--ink-soft); }
+  .note code { font-family: var(--font-mono); font-size: .92em; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="demo">
+  <div class="prose">
+    <p>I&rsquo;m <strong>Diab Neiroukh</strong>, or <strong>lzlrd</strong> most places online. I work at Amazon; before
+that I spent a couple of years at AWS, supporting DNS for Route 53.</p>
+    <p>I build a fair amount in the open. I&rsquo;ve sent patches to the Linux kernel, and
+done years of Android device work going back to Sony&rsquo;s open-device project. I
+keep <a href="#zestginx">zestginx</a> going, a hardened NGINX
+with HTTP/3, and <a class="is-hover" href="#quickname">quickna.me</a>, a link
+shortener that won a Cloudflare challenge a while back. Lately it&rsquo;s been developer
+tools and small MCP servers for Claude Code.</p>
+    <h2>Keeping it small</h2>
+    <p>Most of what I run is meant to sit in a corner for years. A few rules keep it there:</p>
+    <ul>
+      <li>Small enough to read in an afternoon.</li>
+      <li>Patched upstream where it can be, carried locally where it cannot.</li>
+      <li>Quiet: no pager, no dashboard to babysit.</li>
+    </ul>
+    <blockquote>Software that stays small and runs for years.</blockquote>
+    <p>For zestginx that means staying close to upstream NGINX. Every change gets a dry run with <code>nginx -t</code>, and HTTP/3 takes three lines of config:</p>
+    <pre><code>listen 443 quic reuseport;
+listen 443 ssl;
+add_header Alt-Svc 'h3=":443"; ma=86400';</code></pre>
+  </div>
+  <p class="note">The second link shows the hover underline (<code>sage-600</code>); the first is at rest (<code>sage-300</code>).</p>
+</div>
+</body>
+</html>

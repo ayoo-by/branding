@@ -1,0 +1,42 @@
+<!-- @dsCard group="Foundations" height=544 subtitle="Fixed ambient background, two drifting sage blobs" -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Aurora preview</title>
+<style>
+  body { min-height: 0; }
+  .demo { padding: 1.5rem; }
+  /* Preview frame. The .aurora inside is switched to position: absolute so it fills this
+     frame instead of the viewport; everything else on it is the real component. */
+  .demo-frame { position: relative; isolation: isolate; height: 440px; overflow: hidden; border-radius: var(--radius-lg); border: 1px solid var(--border-soft); display: grid; place-items: center; }
+  .demo-frame .aurora { position: absolute; }
+  .demo-label { position: absolute; font-size: .78rem; color: var(--ink-soft); }
+  .demo-label--a { top: .9rem; left: 1.1rem; }
+  .demo-label--b { bottom: .9rem; right: 1.1rem; text-align: right; }
+  .demo-label--c { top: .9rem; right: 1.1rem; text-align: right; }
+  .demo-label--d { bottom: .9rem; left: 1.1rem; }
+  .demo-pad { width: min(22rem, 80%); padding: 1.35rem 1.5rem; }
+  .demo-pad h3 { font-size: 1.45rem; }
+  .demo-pad p { margin-top: .5rem; color: var(--ink-soft); font-size: .96rem; }
+  .note { margin-top: .75rem; font-size: .82rem; color: var(--ink-soft); }
+  .note code { font-family: var(--font-mono); font-size: .92em; color: var(--ink); white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="demo">
+  <div class="demo-frame">
+    <div class="aurora" aria-hidden="true"></div>
+    <span class="demo-label demo-label--a">aurora-blob-1, drift1 26s</span>
+    <span class="demo-label demo-label--c">aurora-tint-1 wash</span>
+    <span class="demo-label demo-label--d">aurora-tint-2 wash</span>
+    <span class="demo-label demo-label--b">aurora-blob-2, drift2 32s</span>
+    <div class="glass demo-pad">
+      <h3>Field notes</h3>
+      <p>Notes on building software, design decisions, and whatever I'm learning this week.</p>
+    </div>
+  </div>
+  <p class="note">Preview only: <code>.aurora</code> is <code>position: absolute</code> inside this frame. On a page it is <code>position: fixed</code> behind everything at <code>z-index: -1</code>. A glass panel sits on top for scale.</p>
+</div>
+</body>
+</html>

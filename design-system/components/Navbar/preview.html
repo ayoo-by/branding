@@ -1,0 +1,123 @@
+<!-- @dsCard group="Navigation" height=528 subtitle="Sticky glass pill that solidifies once scrolled" -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Navbar preview</title>
+<style>
+  body { min-height: 0; }
+  .demo { padding: .75rem 0 1.5rem; }
+  .demo .nav { position: static; }
+  .note { font-size: .82rem; color: var(--ink-soft); padding-inline: 1.25rem; margin-top: .75rem; }
+  .note code { font-family: var(--font-mono); font-size: .92em; }
+  /* Stuck state: the nav sits over page text the way it does once the page has scrolled. */
+  .demo-scroll { position: relative; height: 13.5rem; overflow: hidden; }
+  .demo-scroll .nav { position: absolute; top: 0; left: 0; right: 0; }
+  .demo-under { padding-top: calc(.85rem + 1px); }
+  /* Below 760px stand-in: the site's @media (max-width: 760px) rules, scoped to a phone-width frame. */
+  .demo-mobile { max-width: 390px; margin-left: .9rem; }
+  .demo-mobile .wrap { padding-inline: 1.1rem; }
+  .demo-mobile .nav__brand-rest { display: none; }
+  .demo-mobile .nav__brand-ln::after { content: "."; }
+  .demo-mobile .nav .theme-switch { display: none; }
+  .demo-mobile .nav .theme-cycle { display: inline-flex; }
+  .demo-mobile .nav__inner { padding: .4rem .55rem .4rem 1rem; gap: .4rem; }
+  .demo-mobile .nav__menu { gap: .1rem; }
+  .demo-mobile .nav__menu a { padding: .4rem .7rem; }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="demo">
+
+  <div class="wrap"><p class="note">At rest, top of the page</p></div>
+  <nav class="nav" aria-label="Primary">
+    <div class="wrap">
+      <div class="nav__inner">
+        <span class="nav__frost" aria-hidden="true"></span>
+        <a class="nav__brand" href="#home"><b>Diab</b> <span class="nav__brand-ln">N<span class="nav__brand-rest">eiroukh</span></span></a>
+        <div class="nav__menu" id="nav-menu">
+          <a href="#blog" class="is-active" aria-current="page">Blog</a>
+          <a href="#about">About</a>
+        </div>
+        <div class="nav__right">
+          <div class="theme-switch" role="group" aria-label="Colour theme">
+            <button class="theme-switch__btn" type="button" data-theme-set="light" aria-label="Light theme" title="Light" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
+            <button class="theme-switch__btn is-active" type="button" data-theme-set="auto" aria-label="Match system theme" title="System" aria-pressed="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></button>
+            <button class="theme-switch__btn" type="button" data-theme-set="dark" aria-label="Dark theme" title="Dark" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 009 9 9 9 0 11-9-9z"/></svg></button>
+          </div>
+          <button class="theme-cycle" type="button" data-theme-cycle aria-label="Change colour theme">
+            <span class="theme-cycle__ico" data-for="light"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
+            <span class="theme-cycle__ico" data-for="auto"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
+            <span class="theme-cycle__ico" data-for="dark"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 009 9 9 9 0 11-9-9z"/></svg></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrap"><p class="note">Stuck (<code>.is-stuck</code>, past 12px): text scrolls under the pill, the base turns near-opaque, the shadow deepens</p></div>
+  <div class="demo-scroll">
+    <div class="wrap demo-under">
+      <div class="prose">
+        <p>I'm <strong>Diab Neiroukh</strong>, or <strong>lzlrd</strong> most places online. I work at Amazon; before that I spent a couple of years at AWS, supporting DNS for Route 53.</p>
+        <p>My range runs from microcontrollers up to the servers I run myself: a cloud service I built from scratch, and the infrastructure behind the AICP and ProtonAOSP ROM projects. Security runs through most of it, and I like software that stays small and runs for years without paging anyone.</p>
+      </div>
+    </div>
+    <nav class="nav is-stuck" aria-label="Primary">
+      <div class="wrap">
+        <div class="nav__inner">
+          <span class="nav__frost" aria-hidden="true"></span>
+          <a class="nav__brand" href="#home"><b>Diab</b> <span class="nav__brand-ln">N<span class="nav__brand-rest">eiroukh</span></span></a>
+          <div class="nav__menu">
+            <a href="#blog">Blog</a>
+            <a href="#about" class="is-active" aria-current="page">About</a>
+          </div>
+          <div class="nav__right">
+            <div class="theme-switch" role="group" aria-label="Colour theme">
+              <button class="theme-switch__btn" type="button" data-theme-set="light" aria-label="Light theme" title="Light" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
+              <button class="theme-switch__btn is-active" type="button" data-theme-set="auto" aria-label="Match system theme" title="System" aria-pressed="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></button>
+              <button class="theme-switch__btn" type="button" data-theme-set="dark" aria-label="Dark theme" title="Dark" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 009 9 9 9 0 11-9-9z"/></svg></button>
+            </div>
+            <button class="theme-cycle" type="button" data-theme-cycle aria-label="Change colour theme">
+              <span class="theme-cycle__ico" data-for="light"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
+              <span class="theme-cycle__ico" data-for="auto"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
+              <span class="theme-cycle__ico" data-for="dark"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 009 9 9 9 0 11-9-9z"/></svg></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="wrap"><p class="note">Below 760px (stand-in at phone width): the surname collapses to "N." and the switch becomes the cycle chip</p></div>
+  <div class="demo-mobile">
+    <nav class="nav" aria-label="Primary">
+      <div class="wrap">
+        <div class="nav__inner">
+          <span class="nav__frost" aria-hidden="true"></span>
+          <a class="nav__brand" href="#home"><b>Diab</b> <span class="nav__brand-ln">N<span class="nav__brand-rest">eiroukh</span></span></a>
+          <div class="nav__menu">
+            <a href="#blog" class="is-active" aria-current="page">Blog</a>
+            <a href="#about">About</a>
+          </div>
+          <div class="nav__right">
+            <div class="theme-switch" role="group" aria-label="Colour theme">
+              <button class="theme-switch__btn" type="button" data-theme-set="light" aria-label="Light theme" title="Light" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
+              <button class="theme-switch__btn is-active" type="button" data-theme-set="auto" aria-label="Match system theme" title="System" aria-pressed="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></button>
+              <button class="theme-switch__btn" type="button" data-theme-set="dark" aria-label="Dark theme" title="Dark" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 009 9 9 9 0 11-9-9z"/></svg></button>
+            </div>
+            <button class="theme-cycle" type="button" data-theme-cycle aria-label="Change colour theme">
+              <span class="theme-cycle__ico" data-for="light"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
+              <span class="theme-cycle__ico" data-for="auto"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
+              <span class="theme-cycle__ico" data-for="dark"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 009 9 9 9 0 11-9-9z"/></svg></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="wrap"><p class="note">Preview copies use <code>position: static</code>; on the site the nav is sticky at top 0, z-index 50.</p></div>
+</div>
+</body>
+</html>

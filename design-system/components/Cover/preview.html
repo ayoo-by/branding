@@ -1,0 +1,54 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Sage</title>
+<style>
+  html, body { margin: 0; height: 100%; }
+  body { min-height: 0; background: var(--bg); color: var(--ink); font-family: var(--font-sans); overflow: hidden; }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; }
+  .art { position: absolute; top: 0; left: 480px; width: 480px; height: 288px; }
+  .art svg { display: block; }
+  .sage6 { fill: var(--sage-600); }
+  .sage7 { fill: var(--sage-700); }
+  .sage3 { fill: var(--sage-300); }
+  .ink { fill: var(--ink); }
+  .ground { fill: var(--bg); }
+  .xl { rx: var(--radius-xl); }
+  .lg { rx: var(--radius-lg); }
+  .words { position: absolute; left: 48px; bottom: 40px; max-width: 440px; }
+  .name { margin: 0; font-family: var(--font-display); font-size: 120px; line-height: .92; font-weight: 500; letter-spacing: -0.035em; color: var(--ink); font-optical-sizing: auto; }
+  .tagline { margin: 16px 0 0 4px; font-size: 14px; line-height: 20px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art">
+<svg viewBox="0 0 480 288" width="480" height="288" aria-hidden="true">
+<!--
+  blocks      sage-600 224x304 slab bled off the top (the accent people know, largest) · ink 208x160 deep block · sage-300 208x128 tint bled off the top · sage-700 and sage-600 corner discs · about 39% of 960x288
+  arrangement one tall sage slab beside a stacked pair (tint over ink), bottoms on one line 2rem above the edge, 1rem gutters
+  pattern     the hero's faux-cutout corner, from "the centred hero + single faux-cutout corner is the composition": each lower block has its bottom-right corner carved out by the ground with a concave inner radius and two concave fillets, a corner disc inside (notches at least twice their carve radius tall), like .hero-corner and .hero-corner__circle
+  scales      gutters 1rem (16); slab corners radius-xl, tint corners radius-lg; carve radius 3rem (48, the corner's --cr from 640px) on the slab and 2rem (32, its --cr below 640px) on the ink block
+-->
+<rect class="sage6 xl" x="16" y="-48" width="224" height="304"/>
+<rect class="sage3 lg" x="256" y="-48" width="208" height="128"/>
+<rect class="ink xl" x="256" y="96" width="208" height="160"/>
+<path class="ground" d="M176,156 H241 V257 H128 V204 A48,48 0 0 1 176,156 Z"/>
+<path class="ground" d="M240,156 V108 A48,48 0 0 1 192,156 Z"/>
+<path class="ground" d="M128,256 H80 A48,48 0 0 0 128,208 Z"/>
+<path class="ground" d="M408,184 H465 V257 H376 V216 A32,32 0 0 1 408,184 Z"/>
+<path class="ground" d="M464,184 V152 A32,32 0 0 1 432,184 Z"/>
+<path class="ground" d="M376,256 H344 A32,32 0 0 0 376,224 Z"/>
+<circle class="sage7" cx="186" cy="208" r="22"/>
+<circle class="sage6" cx="422" cy="222" r="15"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Sage</h1>
+<p class="tagline">Warm beige by day, deep navy by night, one sage accent.</p>
+</div>
+</div>
+</body>
+</html>

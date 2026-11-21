@@ -1,0 +1,47 @@
+<!-- @dsCard group="Navigation" height=606 subtitle="Newer and older post as glass blocks at opposite ends" -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Pager preview</title>
+<style>
+  body { min-height: 0; }
+  .demo { padding: 0 1.5rem 1.5rem; }
+  /* Hover stand-in: the exact values of .pager a:hover .glass. */
+  .demo .pager a.is-hover .glass { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+  .note { max-width: 44rem; margin: .8rem auto 0; font-size: .82rem; color: var(--ink-soft); }
+  .note code { font-family: var(--font-mono); font-size: .92em; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="demo">
+  <nav class="pager" aria-label="Post navigation">
+    <div class="prev">
+      <a href="#small-mcp-servers-for-claude-code"><span class="glass"><small>← Newer</small><strong>Small MCP servers for Claude Code</strong></span></a>
+    </div>
+    <div class="next">
+      <a href="#building-quickna-me"><span class="glass"><small>Older →</small><strong>Building quickna.me</strong></span></a>
+    </div>
+  </nav>
+  <p class="note">The flex items are the two <code>div</code>s, so <code>.pager a { flex: 1 }</code> never applies. Each block is as wide as its title and <code>space-between</code> pushes them to opposite ends.</p>
+  <nav class="pager" aria-label="Post navigation">
+    <div class="prev">
+      <a href="#what-supporting-dns-for-route-53-taught-me"><span class="glass"><small>← Newer</small><strong>What two years of supporting DNS for Route 53 taught me about outages</strong></span></a>
+    </div>
+    <div class="next">
+      <a class="is-hover" href="#running-http3-on-zestginx"><span class="glass"><small>Older →</small><strong>Running HTTP/3 on zestginx, a hardened NGINX</strong></span></a>
+    </div>
+  </nav>
+  <p class="note">Long titles: both divs shrink in proportion to their width and the titles wrap; they do not become equal halves. Older shows the hover stand-in: lifted 3px onto <code>shadow-lift</code>, fill unchanged.</p>
+  <nav class="pager" aria-label="Post navigation">
+    <div class="prev">
+    </div>
+    <div class="next">
+      <a href="#sending-my-first-linux-kernel-patch"><span class="glass"><small>Older →</small><strong>Sending my first Linux kernel patch</strong></span></a>
+    </div>
+  </nav>
+  <p class="note">One neighbour: the empty <code>div.prev</code> keeps its place, so the lone block stays at the right at its own width.</p>
+</div>
+</body>
+</html>
