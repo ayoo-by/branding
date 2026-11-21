@@ -32,7 +32,7 @@ Token values, light then dark:
 - `aurora-tint-2`: `rgba(148, 166, 125, 0.26)`, `rgba(148, 166, 125, 0.15)`
 - `aurora-blob-1`: `rgba(148, 166, 125, 0.75)`, `rgba(148, 166, 125, 0.5)`
 - `aurora-blob-2`: `rgba(124, 144, 99, 0.62)`, `rgba(124, 144, 99, 0.42)`
-- `--aurora-blob-opacity`: `0.8`, `0.5` (declared in bundle.css, not in tokens.json)
+- `--aurora-blob-opacity`: `0.8`, `0.5` (declared in the theme stylesheet, not in tokens.json)
 - `bg`, `bg-warm`, `bg-deep`: `#f3f0e7`, `#efe9da`, `#e9e2cf`; dark `#0f1622`, `#121b29`, `#0b111c`
 
 ## Behaviour

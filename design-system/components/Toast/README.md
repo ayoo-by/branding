@@ -18,8 +18,8 @@ A glass pill that rises at the bottom centre of the viewport to say "Coming soon
 - One `.toast`, marked `data-toast`, on any page that has `[data-coming-soon]` links: the script takes the first `[data-toast]` and does nothing if either is missing. On the site only the home page has one, inside `.hero--split`; Blog and About have none.
 - `.toast` is `position: fixed`, `left: 50%`, `bottom: clamp(1.1rem, 4vh, 2.2rem)`, `z-index: 80` and `pointer-events: none`.
 - The pill: padding `0.7rem 1.25rem`, `radius-pill`, `surface-2` fill, `backdrop-filter: blur(20px) saturate(150%)` with the `-webkit-` prefix, a 1px `border-glass` rim, `shadow-lift`, and `ink` text in Inter 500 at 0.95rem (the `button` text style).
-- Hidden at rest: `opacity: 0`, `visibility: hidden`, `transform: translate(-50%) translateY(1rem)`.
-- `.is-visible`: `opacity: 1`, `visibility: visible`, `transform: translate(-50%) translateY(0)`.
+- Hidden at rest: `opacity: 0`, `visibility: hidden`, `transform: translateX(-50%) translateY(1rem)`.
+- `.is-visible`: `opacity: 1`, `visibility: visible`, `transform: translateX(-50%) translateY(0)`.
 - The consumer provides the element, the copy and the script that adds and removes `.is-visible`.
 
 ## Behaviour

@@ -29,8 +29,8 @@ A round frosted chip that links to one profile, set in a `.socials` row under th
 - Hover: `transform: translateY(-3px) translateZ(0)`, the icon turns `sage-invert` (the other mode's accent: `#bcd2a2` in light, `#51613f` in dark), and the drop deepens to `0 11px 24px -10px #323c2357` with the same two inset rims. The glass fill does not change.
 - Transitions: transform 0.4s, colour 0.3s, box-shadow 0.3s, all on `--ease` (`cubic-bezier(0.22, 1, 0.36, 1)`). There is no pressed state.
 - Focus: the global ring, 2px solid `sage-500` at a 3px offset. The global rule (`:where(a, button, input, [tabindex]):focus-visible`) has the same specificity as `.social`, because `:where()` adds nothing and `:focus-visible` counts as one class, and it comes earlier in the stylesheet. So the chip's 50% radius beats the ring's 6px radius and the ring follows the circle.
-- Entrance: on the hero the whole `.hero__socials` row fades up 22px with `.enter` (0.9s, `--d: .3s`). On About the row's wrapper carries `data-reveal` and fades up 26px over 0.8s once it scrolls into view.
-- Reduced motion: transitions drop to 0.01ms, so the lift and the colour change land at once, and `.enter` and `[data-reveal]` content shows in its final state.
+- Entrance: on the hero the whole `.hero__socials` row fades up 22px with `.enter` (0.9s, `--d: .3s`). On About the row's wrapper carries `data-reveal`: once the pre-paint script has set `html.js` it sits at `opacity: 0`, shifted 26px down with `translate`, until 8% of it is in view, then animates up over 0.8s. Without JavaScript the row simply shows.
+- Reduced motion: transitions drop to 0.01ms, so the lift and the colour change land at once, and `.enter` and `.js [data-reveal]` content shows in its final state.
 
 ## Do and don't
 

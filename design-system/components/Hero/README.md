@@ -5,7 +5,7 @@ The home page's full-height composition: two frosted glass stages split by a sea
 ## Use it for
 
 - The home page, once. The split hero is the whole page: it fills the viewport and the page does not scroll.
-- Not yet: a single-stage variant (one stage, one name). DESIGN.md describes it, but the live site ships only the split and the stylesheet does not complete it (see the last Behaviour item).
+- Only in its split form, `.hero--split` inside `body.is-home`. The base `.hero` rules are not a complete composition on their own (see the last Behaviour item).
 
 ## Markup
 
@@ -18,7 +18,7 @@ The home page's full-height composition: two frosted glass stages split by a sea
       <div class="hero__stage">
         <div class="hero__topbar"><!-- .theme-switch: sun, monitor, moon --></div>
         <div class="hero__head">
-          <h1><a class="hero__name" href="/about/" aria-label="About Diab Neiroukh"><span class="hero__fn">Diab</span> <span class="hero__ln">Neiroukh</span></a></h1>
+          <h1><a class="hero__name" href="/about/" title="About me" aria-label="About Diab Neiroukh"><span class="hero__fn">Diab</span> <span class="hero__ln">Neiroukh</span></a></h1>
           <div class="hero__socials"><div class="socials">...</div></div>
         </div>
         <a class="hero-corner" href="/blog/" aria-label="Field notes">
@@ -59,17 +59,17 @@ The home page's full-height composition: two frosted glass stages split by a sea
 ## Behaviour
 
 - No-scroll home: `body.is-home` is `height: 100dvh; overflow: hidden` and a flex column; `main` and `.hero` flex to fill it (`flex: 1; min-height: 0`). `.hero` sets `--pad-y: clamp(1rem, 3vh, 2.25rem)` and `--pad-x: clamp(1.25rem, 4vw, 3rem)` and pads by them, and each stage is `flex: 1`. The preview sets the same on a 720px wrapper.
-- Stage grow: stages transition `flex-grow` over 0.45s on `--ease` (`cubic-bezier(0.22, 1, 0.36, 1)`). That animates layout, against DESIGN.md's rule to animate only `transform` and `opacity`; this README documents the CSS. With a hover-capable pointer (`@media (hover: hover)`) the hovered stage grows to `flex-grow: 1.5`. On touch (`hover: none`) the script toggles `.is-expanded` on the tapped stage, collapses the other, and ignores taps on links, buttons and `[data-coming-soon]`; a second tap collapses it.
+- Stage grow: stages transition `flex-grow` over 0.45s on `--ease` (`cubic-bezier(0.22, 1, 0.36, 1)`). That animates layout, which the theme otherwise avoids; the stylesheet marks it as a deliberate exception. With a hover-capable pointer (`@media (hover: hover)`) the hovered stage grows to `flex-grow: 1.5`. On touch (`hover: none`) the script toggles `.is-expanded` on the tapped stage, collapses the other, and ignores taps on links, buttons and `[data-coming-soon]`; a second tap collapses it.
 - Mesh gradient: unless `prefers-reduced-motion: reduce` matches, the script turns every `[data-hero-gradient]` canvas into a Stripe-style WebGL mesh gradient on its own requestAnimationFrame loop, reading `--gradient-color-1` to `--gradient-color-4` from the canvas's computed style. It skips frames while the tab is hidden. When the resolved theme changes, the theme switch dispatches `sage:themechange`; the gradient pauses, disconnects, calls `WEBGL_lose_context.loseContext()` to free the GPU slot, removes the canvas, inserts a fresh one as the first child of `.hero--split` and starts again with the new colours. Without WebGL or JS the CSS fallback gradient shows, as in the preview.
 - Stage sheen: `.hero__stage::before` runs `hero-drift` 24s `infinite alternate` on `--ease`, out to `translate3d(4%, -3%, 0) scale(1.08)`.
-- Corner hover: the circle fills `sage-600`, its icon turns white and it moves `translate(2px, -2px)` (fill and colour 0.3s, transform 0.35s); the sub line turns `sage-700` and its chevron nudges `translate(2px)` (0.3s).
+- Corner hover: the circle fills `sage-600`, its icon turns white and it moves `translate(2px, -2px)` (fill and colour 0.3s, transform 0.35s); the sub line turns `sage-700` and its chevron nudges `translateX(2px)` (0.3s).
 - Corner sizes: `--cr` is 2rem, and 3rem from 640px wide. At 620px and below `--cr` is 1.75rem, the gap 0, the padding 0.85rem and the bottom-right radius 1.75rem, and `.hero-corner__info` is hidden, leaving the circle (the link's `aria-label` still names it). At the same width the stage radius and `--card-radius` drop to 1.75rem and the topbar padding to `0.9rem 1rem`.
 - Coming soon: the "Ayooby" name and "Products and services" are `href="#" data-coming-soon`. The click is prevented and the `.toast` shows for 2600ms (see Toast).
-- Theme switch: the sun, monitor and moon buttons carry `data-theme-set="light|auto|dark"`. The script sets `data-theme` and `data-theme-pref` on `<html>`, `aria-pressed` and `.is-active` on the buttons, and stores the choice in `localStorage` under `theme`.
+- Theme switch: the sun, monitor and moon buttons carry `data-theme-set="light|auto|dark"`. The script sets `data-theme` and `data-theme-pref` on `<html>`, `aria-pressed` and `.is-active` on the buttons, and stores the choice in `localStorage` under `theme`. With nothing stored the preference is `auto`, so the page follows the OS.
 - Entrance (site markup): the h1, socials and corner use `.enter` (`fade-up`, 0.9s), the topbar pills `.enter--fade`, staggered by inline `--d` from 0.08s to 0.5s. The preview leaves these off.
 - Reduced motion: every animation and transition is cut to 0.01ms, `.enter` content shows at once, the stage sheen stops (`animation: none`) and the WebGL gradient never starts, so the static CSS gradient shows.
 - Focus: every link and button shows the global ring, 2px solid `sage-500` at a 3px offset.
-- Single-stage variant (DESIGN.md, not shipped): one `.hero__stage` with a top-right `.theme-switch`, the centred name, the socials and one corner to the blog. The stylesheet keeps only some of it: the base `.hero h1` size `clamp(2.9rem, 9.5vw, 6.8rem)` and a base `.hero__stage` with no fill and no `z-index`. `--card-radius` comes only from `.hero--split` and `--pad-x`/`--pad-y` only from `body.is-home .hero`, so without them the canvas gets no radius, and its top, left, width and height (all built from the pad variables) are dropped. DESIGN.md also gives the stage `min-height: min(88vh, 780px)`, which the stylesheet has no rule for. Build it only with those pieces added.
+- Base rules: without `.hero--split` the h1 falls back to the base `.hero h1` size, `clamp(2.9rem, 9.5vw, 6.8rem)`, and the stage has no fill and no `z-index`. `--card-radius` comes only from `.hero--split` and `--pad-x`/`--pad-y` only from `body.is-home .hero`, so without them the canvas gets no radius, and its top, left, width and height (all built from the pad variables) are dropped.
 
 ## Do and don't
 

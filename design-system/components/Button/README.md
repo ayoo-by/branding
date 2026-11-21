@@ -29,7 +29,7 @@ A pill-shaped ghost link on raised glass, which the theme uses only for the Newe
 
 ## Behaviour
 
-- Width: each button is a direct child of `.pager`, so `.pager a { flex: 1 }`, written for the post pager, applies here. The buttons share what the pill leaves in the 44rem row equally (293px each at the full 704px, beside a 100px pill), and the label sits at the left of each stretched pill because `.btn` sets no `justify-content`. On page 1 or the last page the one button takes all the remaining width.
+- Width: each button is a direct child of `.pager`, so `.pager a { flex: 1 }`, written for the post pager, applies here. The buttons share what the pill leaves in the 44rem row equally (293px each at the full 704px, beside a 100px pill), and the label sits at the left of each stretched pill because `.btn` sets no `justify-content`. On page 1 or the last page the one button takes all the remaining width. The post pager's `.pager > div > a { display: block; }` does not reach these links, which sit directly in the `nav`, so they stay `inline-flex`.
 - Height: 48.7px. The pill beside it stretches to the same height.
 - Hover: lifts `translateY(-2px)` and the fill brightens: to solid `#fff` in light, and to `rgba(255, 255, 255, 0.14)` in dark, which stays translucent.
 - Active: `translateY(0) scale(0.98)`.
@@ -43,5 +43,5 @@ A pill-shaped ghost link on raised glass, which the theme uses only for the Newe
 - Do keep it tactile: lift and press, nothing else. No outer glow, coloured shadow or custom cursor.
 - Do keep the icon on the outer edge: `arrow-left` before Newer, `arrow-right` after Older.
 - Do put it over the `.aurora` or another glass layer, so the blur has something to show.
-- Don't fill it with sage. DESIGN.md describes a `sage-600` primary button, but the stylesheet has no primary variant. If one is added, white text on `sage-600` holds 4.62:1 in light only, so dark needs its own label colour.
+- Don't fill it with sage. The ghost glass is the only button style.
 - Contrast holds: `ink` on `surface-2` is 12.28:1 in light and 11.48:1 in dark, and on the hover fill 12.80:1 and 10.03:1 (over flat `bg`).

@@ -58,7 +58,7 @@ All of them keep the 1px `border-glass` rim except the chips, which draw their e
 
 ## Do and don't
 
-- Do reach for this recipe before any opaque panel. `surface-solid` (`#fbfaf5`, dark `#161f2e`) is reserved for places glass cannot go, and the live stylesheet does not use it anywhere.
+- Do build panels from this recipe rather than an opaque fill.
 - Do keep the `-webkit-backdrop-filter` line next to every `backdrop-filter`.
 - Don't invent a new blur. Pick the row in the table that matches the job.
 - Don't swap `shadow-glass` for a neutral grey shadow. It is tinted green-warm in light and black in dark on purpose.

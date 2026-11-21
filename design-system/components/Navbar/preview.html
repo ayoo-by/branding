@@ -24,6 +24,9 @@
   .demo-mobile .nav__inner { padding: .4rem .55rem .4rem 1rem; gap: .4rem; }
   .demo-mobile .nav__menu { gap: .1rem; }
   .demo-mobile .nav__menu a { padding: .4rem .7rem; }
+  /* Stand-in for html[data-theme-pref="auto"], the default, which the preview frame does not set: the cycle chip shows the monitor. */
+  .demo-mobile .theme-cycle .theme-cycle__ico[data-for] { display: none; }
+  .demo-mobile .theme-cycle .theme-cycle__ico[data-for="auto"] { display: inline-flex; }
 </style>
 </head>
 <body>
