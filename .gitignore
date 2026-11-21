@@ -1,2 +1,4 @@
 .DS_Store
 .bak-presize/
+dist/
+node_modules/
