@@ -48,7 +48,7 @@ On the tag index, after the head (see SectionHead):
 
 - No hover, pressed or transition rules, even where the tag is a link. Add none until the theme defines one.
 - Focus, for the post header and index links: the global ring, 2px solid `sage-500` at a 3px offset. `.tag`'s `radius-pill` comes later than the ring's 6px radius at the same specificity, so the ring follows the pill.
-- On the index the row carries `data-reveal`: it fades up from `opacity: 0` and `translateY(26px)` over 0.8s on `--ease` once 8% of it is in view. Reduced motion forces it visible with no transform. The card and post header rows ride on their parent's reveal.
+- On the index the row carries `data-reveal`: once `theme-init.js` has set the `js` class on `<html>` it fades up from `opacity: 0` and `translate: 0 26px` over 0.8s on `--ease` when 8% of it is in view. Without JavaScript it simply shows. Reduced motion forces it to `opacity: 1` and `translate: none`, so it shows at once. The card and post header rows ride on their parent's reveal.
 - Theme change swaps `pill-bg` and `sage-700` at once.
 - Responsive: rows wrap and a tag never truncates. A two-word tag can break inside its pill on a very narrow row, so keep labels short.
 
@@ -60,6 +60,5 @@ On the tag index, after the head (see SectionHead):
 - Don't use a slash in a tag. Hugo turns `http/3` into the nested path `/tags/http/3/`.
 - Don't give tags glass, a border or a shadow. Glass pills are Pill and Button; the tag is flat on purpose.
 - Don't add a second hue for categories. Sage is the only accent.
-- DESIGN.md gives the dark `pill-bg` as `sage-200` (`#2b3a2c`). The stylesheet sets `#1f2a21`, and the code wins.
 - Contrast: `sage-700` on `pill-bg` is 4.73:1 in light, just over 4.5:1, and 9.12:1 in dark. The index count at `opacity: .6` blends to 2.32:1 in light and 4.26:1 in dark, both under 4.5:1 at `0.9rem`. The number is repeated on the term page ("3 posts tagged ..."), so it is supplementary, but don't rely on it alone.
 - In dark, `pill-bg` is only 1.06:1 against card glass and 1.22:1 against `bg` (1.33:1 and 1.24:1 in light), so the pill shape fades and the text carries it. Don't rely on the fill to group or separate anything.

@@ -49,7 +49,7 @@ All of them keep the 1px `border-glass` rim except the chips, which draw their e
 
 ## Behaviour
 
-- `.glass` has no hover or transition of its own. The component using it adds them: the pager lifts `translateY(-3px)` to `shadow-lift` over 0.4s on `--ease` (`cubic-bezier(0.22, 1, 0.36, 1)`); the card lifts `translateY(-6px)`, fills to `surface-2` and takes `shadow-lift` over 0.45s.
+- `.glass` has no hover or transition of its own. The component using it adds them: the pager lifts `translateY(-3px)` over 0.4s on `--ease` (`cubic-bezier(0.22, 1, 0.36, 1)`); the card lifts `translateY(-6px)` and fills to `surface-2` over 0.45s. Both switch to `shadow-lift` at once rather than fading: `shadow-glass` opens with an inset layer and `shadow-lift` has none, so the browser cannot interpolate between them.
 - Raising replaces `shadow-glass` with `shadow-lift`, so the inset top highlight goes while the panel is raised. That is how the site behaves.
 - The chips also set `transform: translateZ(0)` and `will-change: transform` so Safari keeps painting the backdrop filter after their entrance animation.
 - There is no `@supports` fallback. Where `backdrop-filter` is unsupported, the translucent fill, rim and shadow still render, unblurred.

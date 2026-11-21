@@ -1,4 +1,4 @@
-<!-- @dsCard group="Navigation" height=606 subtitle="Newer and older post as glass blocks at opposite ends" -->
+<!-- @dsCard group="Navigation" height=627 subtitle="Newer and older post as glass blocks at opposite ends" -->
 <!doctype html>
 <html lang="en-GB">
 <head>
@@ -9,6 +9,8 @@
   .demo { padding: 0 1.5rem 1.5rem; }
   /* Hover stand-in: the exact values of .pager a:hover .glass. */
   .demo .pager a.is-hover .glass { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+  /* Focus stand-in: the global :focus-visible ring on the block-level link. */
+  .demo .pager a.is-focus { outline: 2px solid var(--sage-500); outline-offset: 3px; border-radius: 6px; }
   .note { max-width: 44rem; margin: .8rem auto 0; font-size: .82rem; color: var(--ink-soft); }
   .note code { font-family: var(--font-mono); font-size: .92em; color: var(--ink); }
 </style>
@@ -38,10 +40,10 @@
     <div class="prev">
     </div>
     <div class="next">
-      <a href="#sending-my-first-linux-kernel-patch"><span class="glass"><small>Older →</small><strong>Sending my first Linux kernel patch</strong></span></a>
+      <a class="is-focus" href="#sending-my-first-linux-kernel-patch"><span class="glass"><small>Older →</small><strong>Sending my first Linux kernel patch</strong></span></a>
     </div>
   </nav>
-  <p class="note">One neighbour: the empty <code>div.prev</code> keeps its place, so the lone block stays at the right at its own width.</p>
+  <p class="note">One neighbour: the empty <code>div.prev</code> keeps its place, so the lone block stays at the right at its own width. Shown with the focus stand-in: the link is block-level, so the ring wraps the whole block.</p>
 </div>
 </body>
 </html>

@@ -6,7 +6,7 @@ A small sage text link led by a left arrow that takes the reader back: from a po
 
 - The top of a blog post: "All posts", the first thing in the post header (`layouts/blog/page.html`). See ArticleHead.
 - The 404 page: "Back home", under the lead (`layouts/404.html`). See NotFound.
-- One per page. It is a quiet way back, not a primary action.
+- One per page. It is a quiet way back, not the page's main action.
 
 ## Markup
 
@@ -36,11 +36,11 @@ On the 404 page, as rendered:
 
 ## Behaviour
 
-- Hover: `.backlink:hover .ico` moves the arrow `translateX(-3px)`, 3px to the left, over 0.35s on `--ease` (`cubic-bezier(0.22, 1, 0.36, 1)`). The text colour does not change, nothing underlines and nothing lifts. The built `bundle.css` writes the same value as `translate(-3px)`.
+- Hover: `.backlink:hover .ico` moves the arrow `translateX(-3px)`, 3px to the left, over 0.35s on `--ease` (`cubic-bezier(0.22, 1, 0.36, 1)`). The text colour does not change, nothing underlines and nothing lifts. The site's minified stylesheet writes the same value as `translate(-3px)`.
 - Focus: the global ring, 2px solid `sage-500` at a 3px offset with a 6px radius. `.backlink` sets no radius of its own.
 - There is no pressed or visited state.
-- Entrance: in a post it rides on the header's `data-reveal` fade-up (0.8s once 8% is in view). On the 404 page its `p` is `.enter` with `--d:.2s`: it starts at `opacity: 0` and plays `fade-up` (from 22px low) over 0.9s on `--ease` after a 0.2s delay. The preview drops `data-reveal` and `.enter`, since each starts invisible, and keeps the `p`'s inline style as written; without `.enter` its `--d` does nothing.
-- Reduced motion: the transition drops to 0.01ms, so the arrow jumps the 3px at once, and `.enter` and `[data-reveal]` are forced visible with no transform.
+- Entrance: in a post it rides on the header's `data-reveal` fade-up (0.8s once 8% is in view). That reveal hides the header only once `theme-init.js` has set the `js` class on `<html>`, so without JavaScript the link simply shows. On the 404 page its `p` is `.enter` with `--d:.2s`: it starts at `opacity: 0` and plays `fade-up` (from 22px low) over 0.9s on `--ease` after a 0.2s delay, in CSS alone. The preview shows the link without the post header and drops `.enter`, which starts at `opacity: 0`; it keeps the `p`'s inline style as written, and without `.enter` its `--d` does nothing.
+- Reduced motion: transitions and animations drop to 0.01ms, so the arrow jumps the 3px at once. `.enter` is forced to `opacity: 1` and `transform: none`, and `.js [data-reveal]` to `opacity: 1` and `translate: none`, so the link shows at once on both pages.
 
 ## Do and don't
 

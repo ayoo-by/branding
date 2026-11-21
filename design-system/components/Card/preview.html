@@ -1,4 +1,4 @@
-<!-- @dsCard group="Content" height=416 subtitle="Glass post card, brightens and turns sage on hover" -->
+<!-- @dsCard group="Content" height=416 subtitle="Glass post card that lifts, brightens and turns sage on hover" -->
 <!doctype html>
 <html lang="en-GB">
 <head>
@@ -7,9 +7,8 @@
 <style>
   body { min-height: 0; }
   .demo { padding: 1.75rem 1.5rem 1.5rem; }
-  /* Hover stand-in: what a templated card computes on :hover. .card:hover also sets translateY(-6px),
-     but on the site [data-reveal].is-visible (same specificity, later) resets transform to none, so no lift. */
-  .demo .card.is-hover { box-shadow: var(--shadow-lift); background: var(--surface-2); }
+  /* Hover stand-in: the exact values of .card:hover and the rules it drives. */
+  .demo .card.is-hover { transform: translateY(-6px); box-shadow: var(--shadow-lift); background: var(--surface-2); }
   .demo .card.is-hover:after { opacity: 1; }
   .demo .card.is-hover h3 { color: var(--sage-700); }
   .demo .card.is-hover .card__foot .ico { transform: translate(3px, -3px); }
@@ -42,7 +41,7 @@
       <span class="card__foot">Read post <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
     </a>
   </div>
-  <p class="note">Left at rest. Right in hover as the site shows it (stand-in for <code>:hover</code>): <code>surface-2</code> fill, <code>shadow-lift</code>, sheen, <code>sage-700</code> title, arrow nudged 3px. No lift: the reveal rule cancels the 6px in <code>.card:hover</code>.</p>
+  <p class="note">Left at rest. Right in hover (stand-in for <code>:hover</code>): lifted 6px onto <code>shadow-lift</code>, <code>surface-2</code> fill, sheen, <code>sage-700</code> title, arrow nudged 3px up and right.</p>
 </div>
 </body>
 </html>

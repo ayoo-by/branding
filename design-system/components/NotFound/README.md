@@ -43,6 +43,6 @@ As the template renders it, inside `main` under the navbar and over the `.aurora
 - Do keep the order: eyebrow, title, one lead line, one way home.
 - Do keep the copy short and plain, as the template has it.
 - Don't add more links or a search box. Getting the reader home is the page's only job.
-- Don't colour the title in markup. DESIGN.md says section and article headings render in `sage-600`, but this template leaves its `h1` in `ink` and the code wins; change the theme if the 404 should match article titles.
+- Don't colour the title in markup. The template leaves its `h1` in `ink`, unlike the `sage-600` article and section titles; change the theme if the 404 should match them.
 - Don't drop `text-align: center` from the section. The eyebrow and backlink are inline-flex and only centre through it.
 - Contrast: the `sage-600` "Error 404" eyebrow at `0.78rem` is 4.06:1 on `bg` in light, under 4.5:1, and lower over the aurora's lower stops (3.82:1 on `bg-warm`, 3.58:1 on `bg-deep`). It is 9.06:1 in dark. The `ink` title holds 11.23:1 in light and 15.11:1 in dark, the `ink-soft` lead 5.75:1 and 8.35:1, and the `sage-700` backlink 5.88:1 and 11.12:1.

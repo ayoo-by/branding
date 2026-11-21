@@ -5,7 +5,7 @@ A small raised-glass chip that the theme uses only as the blog list's page count
 ## Use it for
 
 - The page counter between the Newer and Older ghost buttons in the blog list's pagination nav (`layouts/blog/section.html`). It is written whenever that nav is, which is when the list has more than one page at 9 posts per page, including the first and last page.
-- That counter is the theme's only `.pill`. DESIGN.md calls the pill a status chip, but no template uses one for a status.
+- That counter is the theme's only `.pill`.
 - Not for actions. A pill has no hover, focus or press state; use the ghost Button.
 - Not for post topics. Those are Tags.
 - Not the "Ayoo by Labs" control in the home hero top bar. That is a `.theme-switch.labs-pill` group of two links, documented with ThemeSwitch and Hero.
@@ -42,5 +42,5 @@ A small raised-glass chip that the theme uses only as the blog list's page count
 - Do keep the pill over the `.aurora` or another glass layer, so the blur has something to show.
 - Don't make a pill a link or a button, and don't add a hover lift to fake one.
 - Don't fill a pill with sage. A sage fill means a tag or the active nav item.
-- Don't add a status dot, a status colour or an icon from a page stylesheet. The theme has none of them for pills.
+- Don't add a dot or an icon from a page stylesheet. The theme has no rules for either inside a pill.
 - Contrast holds: `ink-soft` on `surface-2` is 6.28:1 in light and 6.35:1 in dark (over flat `bg`).
