@@ -37,6 +37,18 @@ a `/code` directory or under a `LICENSE-CODE` file — is governed by those term
 (MIT unless stated otherwise). That code licence covers the code **only**; it
 grants no rights in the Brand Assets, which remain governed by this document.
 
+## Third-party components
+
+These files are third-party works under their own licences. They are not
+Brand Assets, and nothing in this document restricts what their licences allow:
+
+- `fonts/`: the Fraunces and Inter typefaces, under the SIL Open Font License,
+  Version 1.1 (`fonts/OFL-Fraunces.txt`, `fonts/OFL-Inter.txt`).
+- `icons/`: the icon set, based on Lucide (with portions from Feather), under
+  the ISC License (`icons/LICENSE`).
+
+Those licences cover those files only and grant no rights in the Brand Assets.
+
 ## Contact
 
 For any use beyond this policy, request permission at

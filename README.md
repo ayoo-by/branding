@@ -117,5 +117,6 @@ from its site root through the `branding` submodule, and its `<head>` links live
 ## Licences
 
 The brand mark, wordmark and other Ayooby brand assets are not openly licensed: see
-`LICENCE.md`. Third-party files keep their own licences: `fonts/` (SIL Open Font
-Licence 1.1, `fonts/OFL-*.txt`) and `icons/` (ISC, `icons/LICENSE`).
+`LICENCE.md`. Its "Third-party components" section carves out `fonts/` (SIL Open
+Font License 1.1, `fonts/OFL-*.txt`) and `icons/` (ISC, `icons/LICENSE`), which
+keep their own licences.
